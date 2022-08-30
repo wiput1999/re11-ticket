@@ -2,7 +2,7 @@ import { gql, ApolloServer } from 'apollo-server-micro'
 import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core'
 import { NextApiRequest, NextApiResponse } from 'next'
 
-let books = [
+const books = [
   {
     id: 0,
     name: 'JavaScript for Dummies',
