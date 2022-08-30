@@ -9,13 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.10.0",
+    "@stripe/stripe-js": "^1.35.0",
     "apollo-server-core": "^3.10.2",
     "apollo-server-micro": "^3.10.2",
     "graphql": "^16.6.0",
     "micro": "^9.4.1",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "stripe": "^10.6.0"
   },
   "devDependencies": {
     "@types/node": "18.7.14",
