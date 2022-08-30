@@ -58,10 +58,15 @@ const PaymentChild = () => {
       return
     }
 
+    const origin =
+      typeof window !== 'undefined' && window.location.origin
+        ? window.location.origin
+        : ''
+
     const result = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: 'https://example.com/order/123/complete',
+        return_url: `${origin}/completed`,
       },
     })
 
