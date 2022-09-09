@@ -1,0 +1,11 @@
+generates:
+  .codegen/resolvers.ts:
+    schema: 'lib/graphql/index.ts'
+    config:
+      useIndexSignature: true
+      enumsAsTypes: true
+      skipTypename: true
+      maybeValue: 'T | undefined'
+    plugins:
+      - 'typescript'
+      - 'typescript-resolvers'
