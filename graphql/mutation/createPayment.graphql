@@ -1,0 +1,5 @@
+mutation CreatePayment {
+  createPayment {
+    secret
+  }
+}

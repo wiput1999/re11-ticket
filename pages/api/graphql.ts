@@ -3,7 +3,7 @@ import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-co
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import Stripe from 'stripe'
-import { typeDefs } from 'lib/graphql'
+import { typeDefs } from 'graphql/schema'
 import { Resolvers } from '@codegen/resolvers'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {

@@ -1,6 +1,8 @@
+schema: 'graphql/schema/index.ts'
+documents:
+  - 'graphql/**/*.graphql'
 generates:
   .codegen/resolvers.ts:
-    schema: 'lib/graphql/index.ts'
     config:
       useIndexSignature: true
       enumsAsTypes: true
@@ -9,3 +11,13 @@ generates:
     plugins:
       - 'typescript'
       - 'typescript-resolvers'
+  .codegen/client.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+    config:
+      withHooks: true
+  .codegen/schema.graphql:
+    plugins:
+      - 'schema-ast'
