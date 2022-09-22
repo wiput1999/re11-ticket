@@ -8,6 +8,7 @@ generates:
       enumsAsTypes: true
       skipTypename: true
       maybeValue: 'T | undefined'
+      contextType: graphql/context#GQLContext
     plugins:
       - 'typescript'
       - 'typescript-resolvers'
