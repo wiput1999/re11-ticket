@@ -1,4 +1,4 @@
-schema: 'graphql/schema/index.ts'
+schema: 'graphql/server/schema/index.ts'
 documents:
   - 'graphql/**/*.graphql'
 generates:
@@ -8,7 +8,7 @@ generates:
       enumsAsTypes: true
       skipTypename: true
       maybeValue: 'T | undefined'
-      contextType: graphql/context#GQLContext
+      contextType: graphql/server#GQLContext
     plugins:
       - 'typescript'
       - 'typescript-resolvers'
