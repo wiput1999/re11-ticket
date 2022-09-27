@@ -12,13 +12,15 @@
     "db:generate": "prisma generate"
   },
   "pkg": {
-    "assets": ["node_modules/.prisma/client/*.node"]
+    "assets": [
+      "node_modules/.prisma/client/*.node"
+    ]
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@prisma/client": "^4.3.1",
-    "@stripe/react-stripe-js": "^1.11.0",
-    "@stripe/stripe-js": "^1.37.0",
+    "@stripe/react-stripe-js": "^1.12.0",
+    "@stripe/stripe-js": "^1.38.1",
     "apollo-server-core": "^3.10.2",
     "apollo-server-micro": "^3.10.2",
     "graphql": "^16.6.0",
@@ -29,19 +31,19 @@
     "stripe": "^10.10.0"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "2.12.1",
+    "@graphql-codegen/cli": "2.13.0",
     "@graphql-codegen/schema-ast": "^2.5.1",
     "@graphql-codegen/typescript": "2.7.3",
     "@graphql-codegen/typescript-operations": "2.5.3",
     "@graphql-codegen/typescript-react-apollo": "^3.3.3",
     "@graphql-codegen/typescript-resolvers": "^2.7.3",
-    "@types/node": "18.7.18",
+    "@types/node": "18.7.23",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
-    "@typescript-eslint/eslint-plugin": "^5.38.0",
-    "@typescript-eslint/parser": "^5.38.0",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
     "autoprefixer": "^10.4.12",
-    "eslint": "8.23.1",
+    "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.1",
