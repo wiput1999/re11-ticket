@@ -11,6 +11,9 @@
     "codegen": "graphql-codegen --config codegen.yml",
     "db:generate": "prisma generate"
   },
+  "pkg": {
+    "assets": ["node_modules/.prisma/client/*.node"]
+  },
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@prisma/client": "^4.3.1",
