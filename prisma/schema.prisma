@@ -10,6 +10,7 @@ datasource db {
 model Order {
   id        String   @id @default(uuid())
   email     String
+  userId    String
   createdAt DateTime @default(now())
 
   payment Payment?
@@ -25,10 +26,20 @@ model Ticket {
   order Order @relation(fields: [orderId], references: [id])
 }
 
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILED
+}
+
 model Payment {
-  id        String   @id @default(uuid())
-  orderId   String   @unique
-  createdAt DateTime @default(now())
+  id         String        @id @default(uuid())
+  providerId String        @unique
+  amount     Float         @default(0)
+  orderId    String        @unique
+  status     PaymentStatus @default(PENDING)
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
 
   order Order @relation(fields: [orderId], references: [id])
 }
