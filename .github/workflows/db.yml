@@ -22,6 +22,10 @@ jobs:
         with:
           node-version: 18
           cache: 'pnpm'
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
       - name: Install Dependencies
         run: pnpm i
       - name: Migrate Database
