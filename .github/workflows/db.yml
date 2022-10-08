@@ -28,7 +28,9 @@ jobs:
           cache: 'pnpm'
       - name: Install Dependencies
         run: pnpm i
+      - name: Codegen Database
+        run: pnpm db:generate
       - name: Migrate Database
         env:
           DATABASE_URL: ${{ github.event.inputs.environment == 'dev' && secrets.DEV_DATABASE_URL || github.event.inputs.environment == 'prod' && secrets.PROD_DATABASE_URL }}
-        run: echo $DATABASE_URL
+        run: pnpm prisma migrate deploy
