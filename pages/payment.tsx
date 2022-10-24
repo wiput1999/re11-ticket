@@ -27,8 +27,6 @@ const Payment: NextPage = () => {
       return
     }
 
-    console.log(secret)
-
     setSecret(secret)
   }
 
