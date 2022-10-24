@@ -1,3 +1,4 @@
+import { useCreatePaymentMutation } from '@codegen/client'
 import {
   PaymentElement,
   Elements,
@@ -13,26 +14,22 @@ const stripePromise = loadStripe(
 )
 
 const Payment: NextPage = () => {
-  const [clientSecret, setSecret] = useState<string>('')
+  const [clientSecret, setSecret] = useState<string | null>(null)
+
+  const [createPaymentMutation, {}] = useCreatePaymentMutation()
 
   const handleCreatePayment = async () => {
-    fetch('/api/graphql', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: `
-        mutation CreatePayment {
-          createPayment {
-            secret
-          }
-        }
-      `,
-      }),
-    })
-      .then((res) => res.json())
-      .then((result) => setSecret(result.data.createPayment.secret))
+    const { data } = await createPaymentMutation()
+
+    const secret = data?.createPayment.secret
+
+    if (!secret) {
+      return
+    }
+
+    console.log(secret)
+
+    setSecret(secret)
   }
 
   return (
@@ -77,7 +74,9 @@ const PaymentChild = () => {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <PaymentElement />
+      <PaymentElement
+        options={{ fields: { billingDetails: { email: 'never' } } }}
+      />
       <button disabled={!stripe}>Submit</button>
     </form>
   )
